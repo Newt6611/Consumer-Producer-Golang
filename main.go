@@ -35,6 +35,7 @@ func Producer() {
 	defer wg.Done()
 
 	for i := 0; i < LOOP_TIMES; i++ {
+		// Producer every "half second" produce a number into queue buffer
 		time.Sleep(500 * time.Millisecond)
 		
 		r := rand.Intn(100)
@@ -57,6 +58,7 @@ func Consumer() {
 	defer wg.Done()
 
 	for i := 0; i < LOOP_TIMES; i++ {
+		// Consumer every "one second" get a number from queue buffer
 		time.Sleep(1000 * time.Millisecond)
 
 		cond_var.L.Lock()

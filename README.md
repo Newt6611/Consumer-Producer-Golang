@@ -1,3 +1,3 @@
 # Consumer-Producer-Golang
 
-![CHEESE!] (example_tex.png)
+![EXAMPLE!](example_tex.png)

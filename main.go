@@ -18,9 +18,6 @@ var (
 	// queue buffer
 	buffer *list.List
 	
-	// current buffer index
-	index int
-	
 	wg *sync.WaitGroup
 	mutex *sync.Mutex
 	cond_var *sync.Cond
@@ -80,7 +77,6 @@ func Consumer() {
 func main() {
 	// buffer init
 	buffer = list.New()
-	index = 0
 	
 	mutex = new(sync.Mutex)
 	wg = &sync.WaitGroup{}
